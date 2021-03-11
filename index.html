@@ -13,7 +13,7 @@
 <meta property="og:url" content="http://example.com/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="Jiawei Ni">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -172,9 +172,53 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="基于Mac，使用用hexo-cli创建自己的第一个博客"><a href="#基于Mac，使用用hexo-cli创建自己的第一个博客" class="headerlink" title="基于Mac，使用用hexo-cli创建自己的第一个博客"></a>基于Mac，使用用hexo-cli创建自己的第一个博客</h2><h3 id="一、安装node"><a href="#一、安装node" class="headerlink" title="一、安装node"></a>一、安装node</h3><ol>
-<li><a target="_blank" rel="noopener" href="https://nodejs.org/">https://nodejs.org/</a></li>
+        <h2 id="基于-Mac，使用-hexo-cli-创建自己的第一个博客"><a href="#基于-Mac，使用-hexo-cli-创建自己的第一个博客" class="headerlink" title="基于 Mac，使用 hexo-cli 创建自己的第一个博客"></a>基于 Mac，使用 hexo-cli 创建自己的第一个博客</h2><h3 id="一、安装及运行步骤"><a href="#一、安装及运行步骤" class="headerlink" title="一、安装及运行步骤"></a>一、安装及运行步骤</h3><ol>
+<li><p>去 node 官网 ：<a target="_blank" rel="noopener" href="https://nodejs.org/">https://nodejs.org/</a> 下载（最新的就好），使用“next”安装</p>
+</li>
+<li><p>在 mac 终端查看</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 查看node版本</span></span><br><span class="line">node -v</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查看npm版本，node安装后自带</span></span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure></li>
+<li><p>npm 速度较慢，使用国内的淘宝镜像</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry&#x3D;http:&#x2F;&#x2F;refistry.npm.tabao.org</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 查看cnpm 是否安装完成</span><br><span class="line">cnpm -v</span><br></pre></td></tr></table></figure></li>
+<li><p>下载 hexo 脚手架，如果用过 vue 的同学肯定知道 vue 脚手架，同理下载 hexo 脚手架</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查看hexo-cli安装是否成功</span></span><br><span class="line">hexo -v</span><br></pre></td></tr></table></figure></li>
+<li><p>成功后，体验 hexo 博客</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 初始化自己创建的空目录，自动创建一系列目录</span></span><br><span class="line">hexo init</span><br><span class="line"></span><br><span class="line"> <span class="comment">// 本地启动，默认为http://localhost:4000</span></span><br><span class="line"><span class="function">hexo <span class="title">s</span><span class="params">(server)</span></span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 新建markdown，路径是：./yourprojectname/source/_posts/xxxx.md</span></span><br><span class="line">hexo <span class="keyword">new</span> <span class="string">&quot;我的第一个博客&quot;</span></span><br><span class="line"></span><br><span class="line"> <span class="comment">// 对于新建的markdown文件生成相应的html文件</span></span><br><span class="line">hexo g</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>markdown 语法知识，可参见<a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-tutorial.html">菜鸟教程-markdown</a></p>
+</li>
+<li><p>非本地访问，需要借助 github 仓库</p>
+<ol>
+<li>先去 GitHub 上创建一个仓库，这个很简单，只不过仓库名需要以下面这种方式命名</li>
 </ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 浏览器输入</span></span><br><span class="line">YourGithubName.github.io</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>修改配置文件<strong>_config.yml</strong>，git 方式（type）部署（deploy）到仓库（地址为 repo）的分支（branch）master 中</li>
+</ol>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/YourGithubName/YourGithubName.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></li>
+<li><p>正式访问</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在你的工程文件中（比如blog）</span></span><br><span class="line">blog/source、blog/node_modules等等</span><br><span class="line"></span><br><span class="line"><span class="comment">//blog目录下，三个命令依次执行，</span></span><br><span class="line"></span><br><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line">hexo g</span><br><span class="line"></span><br><span class="line">hexo d</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>使用<a target="_blank" rel="noopener" href="https://yougithubname.github.io访问你的博客网站/">https://YouGithubName.github.io访问你的博客网站</a></p>
+</li>
+</ol>
+<h3 id="二、安装遇到的错误"><a href="#二、安装遇到的错误" class="headerlink" title="二、安装遇到的错误"></a>二、安装遇到的错误</h3><ol>
+<li>hexo d 出错，再次访问 github，提示我出发滥用机制，禁止访问，几分钟甚至几个小时后再来访问</li>
+</ol>
+<p>这个问题我百度了一圈也没找到有效的解决方法，最后硬核破解，直接把工程目录删除！！！重建一个目录，安装 hexo-cli 脚手架。</p>
+<ol start="2">
+<li>hexo init 出错</li>
+</ol>
+<p>这个问题，我在换了个网的时候成功 init，此时 github 也能正常访问</p>
+<ol start="3">
+<li>无法访问 YourGithubName.github.io</li>
+</ol>
+<p>这个问题，可以稍微等一段时间，需要等待程序反应时间，这个时间有一点长</p>
+<h3 id="三、总结"><a href="#三、总结" class="headerlink" title="三、总结"></a>三、总结</h3><p>第一个博客，就这样踉踉跄跄的搭建成功了，这也是我在这个博客系统上写的第一篇博客，不断产出，不断进步。</p>
+<hr>
+<p><strong><em>凡事过往，皆为序章</em></strong></p>
 
       
 
@@ -313,7 +357,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2021 John Doe
+    		&copy; 2021 Jiawei Ni
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
