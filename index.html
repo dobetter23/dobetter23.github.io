@@ -157,53 +157,67 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="git简单使用指南"><a href="#git简单使用指南" class="headerlink" title="git简单使用指南"></a>git简单使用指南</h2><h3 id="一、安装git"><a href="#一、安装git" class="headerlink" title="一、安装git"></a>一、安装git</h3><p>对于windows用户，到官网链接：<a target="_blank" rel="noopener" href="https://gitforwindows.org/">https://gitforwindows.org/</a> 下载 ，使用” next “安装即可。</p>
-<h3 id="二、git主要功能：本地仓库与远程仓库的交互"><a href="#二、git主要功能：本地仓库与远程仓库的交互" class="headerlink" title="二、git主要功能：本地仓库与远程仓库的交互"></a>二、git主要功能：本地仓库与远程仓库的交互</h3><p>本地仓库和远端仓库的文件上传和下载，重复的、未更新的文件不会被上传。</p>
+        <h2 id="git-简单使用指南"><a href="#git-简单使用指南" class="headerlink" title="git 简单使用指南"></a>git 简单使用指南</h2><h3 id="一、安装-git"><a href="#一、安装-git" class="headerlink" title="一、安装 git"></a>一、安装 git</h3><p>对于 windows 用户，到官网链接：<a target="_blank" rel="noopener" href="https://gitforwindows.org/">https://gitforwindows.org/</a> 下载 ，使用” next “安装即可。</p>
+<h3 id="二、git-主要功能：本地仓库与远程仓库的交互"><a href="#二、git-主要功能：本地仓库与远程仓库的交互" class="headerlink" title="二、git 主要功能：本地仓库与远程仓库的交互"></a>二、git 主要功能：本地仓库与远程仓库的交互</h3><p>本地仓库和远端仓库的文件上传和下载，重复的、未更新的文件不会被上传。</p>
 <blockquote>
 <p>本地仓库<strong>上传</strong>到远程仓库</p>
 </blockquote>
-<ol>
-<li><p>创建一个文件夹，作为我们的<strong>workspace</strong>，即初始化我们的本地仓库</p>
-<p>使用 <em><strong>git init</strong></em> 创建 同目录下的.git文件，有了这个文件才有后续的操作</p>
-</li>
-<li><p>将自己需要上传的文件，先放置缓存区<strong>staging area</strong></p>
 <ul>
-<li><p>使用 <em><strong>git add ./具体文件</strong></em> 缓存具体文件、</p>
-</li>
-<li><p><em><strong>git add . 和 git add –all</strong></em> 缓存目录下所有文件</p>
-</li>
+<li>创建一个文件夹，作为我们的<strong>workspace</strong>，即初始化我们的本地仓库</li>
 </ul>
-<p>使用 <em><strong>git status -s</strong></em> 查看文件状态</p>
-</li>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+
+<p>创建同目录下的.git 文件，有了这个文件才有后续的操作</p>
+<ul>
+<li>将自己需要上传的文件，先放置缓存区<strong>staging area</strong><br>缓存具体文件<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add ./yourfilename</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>缓存目录下所有文件</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git add --all</span><br></pre></td></tr></table></figure>
+
+<p>查看文件状态</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status -s</span><br></pre></td></tr></table></figure>
+
+<ul>
 <li><p>将缓存文件提交到本地仓库<strong>local repository</strong>，才能推到远端仓库<strong>remote repository</strong></p>
-<p>使用 git commit -m “message”，message是通过-m参数添加的提交信息，</p>
-<p>比如：***git commit -m “第一次提交”***，不用也行，为了规范，提交一次，修改一次提交此次能辨识的信息</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">&quot;message&quot;</span></span><br></pre></td></tr></table></figure>
+<p>message 是通过 -m 参数添加的提交信息，</p>
 </li>
 <li><p>推到远程仓库的前一步，需要添加远程仓库地址</p>
-<p>使用 <em><strong>git remote add origin <a target="_blank" rel="noopener" href="https://gitee.com/dobetter23/test-git.git">https://gitee.com/dobetter23/test-git.git</a></strong></em></p>
-<p>把origin关联远程仓库地址，origin是可以换成你喜欢的名字</p>
-<p>使用 <em><strong>git remote -v</strong></em> 查看自己的远程仓库是否添加成功</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin https:<span class="comment">//gitee.com/dobetter23/test-git.git</span></span><br></pre></td></tr></table></figure>
+<p>把 origin 关联远程仓库地址，origin 是可以换成你喜欢的名字</p>
 </li>
-<li><p>上传远程仓库</p>
-<p>git push origin master</p>
-<p>这是上传到你的主分支，把master改成develop或者是其他的origin所关联的远程仓库地址的其他分支都是ok的。</p>
-</li>
-</ol>
+</ul>
+<p>查看是否关联</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>上传远程仓库<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+git 所关联的远程仓库地址的其他分支都是 ok 的。</li>
+</ul>
 <blockquote>
 <p>远程仓库<strong>下载</strong>到本地仓库</p>
 </blockquote>
-<ol>
-<li>git clone <em>远程仓库地址</em>，例如: <em><strong>git clone <a target="_blank" rel="noopener" href="https://gitee.com/dobetter23/test-git.git">https://gitee.com/dobetter23/test-git.git</a></strong></em>，如果要上传本地仓库中的修改后的文件，或者新添加的文件，与 <strong>上述本地仓库上传到远程仓库步骤基本一致，去除第一步和第四步即可</strong>,<br>由于git clone 命令会产生一个 <strong>.git</strong> 文件，并且git remote -v查看已经关联本地和远程了。</li>
-</ol>
+<ul>
+<li><p>克隆远程仓库的</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone 远程仓库地址</span><br><span class="line"></span><br><span class="line"><span class="comment">//例如: git clone https://gitee.com/dobetter23/test-git.git</span></span><br></pre></td></tr></table></figure></li>
+<li><p>如果要上传本地仓库中的修改后的文件，或者新添加的文件，与 <strong>上述本地仓库上传到远程仓库步骤基本一致，去除第一步和第四步</strong>即可</p>
+</li>
+<li><p>由于 git clone 命令会产生一个 <strong>.git</strong> 文件，并且 git remote -v 查看已经关联本地和远程了。</p>
+</li>
+</ul>
 <blockquote>
 <p><strong>分支操作</strong></p>
 </blockquote>
 <p>默认分支是<strong>master</strong>分支上，如果你的远程仓库具有多个分支</p>
 <ul>
-<li><p>如果你想要把你本地仓库中的文件上传到远程已有的<strong>otherbranch</strong>分支，你需要创建一个本地的<strong>同名</strong>分支，并且用 <em><strong>git checkout/swtich</strong></em> 切换你当前的分支</p>
-<p> 后面如果要执行<strong>git push -u origin otherbranch</strong>就会向你远程仓库的<strong>otherbranch</strong>分支上传你<strong>git commit</strong>的文件，只能在远程<strong>otherbranch</strong>分支上看到你刚才上传的文件。</p>
+<li>将本地仓库中的文件上传到<strong>远程已有的 otherbranch</strong>分支</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建一个本地的同名分支，</span></span><br><span class="line">git branch otherbranch</span><br><span class="line"></span><br><span class="line"><span class="comment">// 切换当前分支</span></span><br><span class="line">git checkout otherbranch</span><br><span class="line"><span class="comment">// 或者</span></span><br><span class="line">git <span class="keyword">switch</span> otherbranch</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>执行<strong>git push -u origin otherbranch</strong>就会向你远程仓库的<strong>otherbranch</strong>分支上传你的文件，而且只能在远程<strong>otherbranch</strong>分支上看到你刚才上传的文件。</p>
 </li>
-<li><p>如果远程仓库没有此分支，在你<strong>git push</strong>后，会自动在远程仓库中添加一个此分支的<strong>同名</strong>分支。</p>
+<li><p>如果远程仓库没有此分支，在你<strong>git push</strong>后，会自动在远程仓库中<strong>添加</strong>一个此分支的<strong>同名</strong>分支。</p>
 </li>
 </ul>
 
